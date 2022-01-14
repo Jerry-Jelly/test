@@ -14,7 +14,7 @@
         // 1. 1번 슬라이드의 앞쪽에 3번 슬라이드를 배치
         // (B).insertBefore(A) - A의 앞에 B를 배치한다.
         // (B).insertAfter(A) - A의 뒤에 B를 배치한다.
-        $('.slide > ul > li:last-child').insertBefore('.slide > ul > li:first-child');
+        // $('.slide > ul > li:last-child').insertBefore('.slide > ul > li:first-child');
 
         // 2. 3번 슬라이드 왼쪽으로 1200픽셀 만큼 이동하여 1번이 화면 중앙에 보이도록 한다.
         // $('.slide > ul').css('margin-left','-1200px');
@@ -33,28 +33,39 @@
         //   });
         // }
 
-        //4. 3초마다 자동으로 움직이게 된다.
-        // let Timer = setInterval(moveSlide,3000);
-      });
-
-      //1. 순서변경하기
-      $('.slide > ul > li:last-child').insertBefore('.slide > ll > l:first-child');
-      $('.slide > ul').css('margin-top','-300px');
-      function moveSlide(){
-        $('.slide > ul').animate({'margin-top':'-600px'},500,function(){
-          $('.slide > ul > li:first-child').insertAfter('slide > ul > li:last-child');
-          $('.slide > ul').css('margin-top','-300px');
+        function moveSlide2(){
+        $('.slide > ul').animate({'margin-left':'0px'},500,function(){
+          $('.slide > ul > li:last-child').insertBefore('.slide > ul > li:first-child');
+          $('.slide > ul').css('margin-left','-1200px');
         });
       }
 
-      let Timer = setInterval(moveSlide, 4000);
+        //4. 3초마다 자동으로 움직이게 된다.
+        // let Timer = setInterval(moveSlide,3000);
+
+         //1. 순서변경하기
+        $('.slide > ul > li:last-child').insertBefore('.slide > ll > li:first-child');
+
+        $('.slide > ul').css('margin-top','-300px');
+
+        function moveSlide(){
+          $('.slide > ul').animate({'margin-top':'-600px'},500,function(){
+            $('.slide > ul > li:first-child').insertAfter('.slide > ul > li:last-child');
+            $('.slide > ul').css('margin-top','-300px');
+          });
+        }
+
+        let Timer = setInterval(moveSlide, 3000);
+      });
+
+     
     </script>
 </head>
 <body>
   <div id="wrap">
     <header>
       <div class="h_inner">
-        <h1><a href="#" title="메인페이지로 바로가기">상단로고</a></h1>
+        <h1><a href="#" title="메인페이지로 바로가기"><img src="./images/logo.jpg" alt="상단로고"></a></h1>
 
         <nav class="gnb">
           <ul>
