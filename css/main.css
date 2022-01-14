@@ -21,6 +21,79 @@ header .h_inner, footer .f_inner{
     width:1200px; height: 100px;
     margin: 0px auto;
 }
+.h_inner{
+    position: relative;
+    padding-top: 30px;
+    box-sizing: border-box;
+    /* 130px박스가 되면 안되니까. */
+}
+.h_inner > h1{
+    width:200px; height:40px;
+    background: #00C73C;
+    text-align: center;
+    float: left;
+}
+.gnb{
+    width:545px; height:40px;
+    float: right;
+    color: #fff;
+    transition: 0.3s;
+}
+.gnb > ul{
+
+}
+.gnb > ul > li{
+    position: relative;
+    float: left;
+}
+.gnb:hover .sub{
+    display: block;
+}
+.gnb:hover::after{
+    display: block;
+    content: "";
+    width:1200px; height:160px;
+    background: #737373;
+    position: absolute;
+    top:70px; left:0px;
+    z-index: 1;
+}
+.gnb > ul > li > a{
+    padding: 0px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    display: block;
+}
+.gnb > ul > li > a:hover{
+    background: #737373;
+    color:#fff;
+}
+.sub{
+    position: absolute;
+    width:100%;
+    z-index: 100;
+    display: none;
+    transition: 0.3s;
+}
+.sub > li{
+    text-align: center;
+}
+.sub > li > a{
+    line-height: 40px;
+    display: block;
+    transition: 0.1s;
+    color:#fff;
+}
+.sub > li > a:hover{
+    background: #fff;
+    color:#333;
+}
+
+
+
+
+
 main{
     width:1200px; height:500px;
     margin: 0px auto;
@@ -30,6 +103,7 @@ main{
 .slide{
     width:100%; height:300px;
     background: beige;
+    overflow-y: hidden;
 }
 .slide > ul{
     /* width:3600px; display:flex; */
